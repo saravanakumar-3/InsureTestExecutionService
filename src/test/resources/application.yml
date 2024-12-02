@@ -2,3 +2,7 @@ logging:
   level:
     root: ERROR
     com.insure: INFO
+
+automation:
+  browser: chrome
+  url: https://d28j9pfwubj8q5.cloudfront.net/5U5PU/S2xbn/welcome
