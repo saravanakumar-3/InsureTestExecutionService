@@ -2,6 +2,7 @@ package com.insure.test.executionservice.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,5 +28,9 @@ public class BasePage {
 
   protected void click(By by) {
     findElement(by).click();
+  }
+
+  protected List<String> getListOfTexts(By by) {
+    return findElements(by).stream().map(WebElement::getText).collect(Collectors.toList());
   }
 }

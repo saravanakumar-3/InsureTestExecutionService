@@ -21,7 +21,6 @@ public class WelcomePage extends BasePage {
   @Value("${automation.url}")
   private String url;
 
-  public static final By pageTitle = new By.ById("page-title");
   public static final By getStartedBtn = new By.ById("btn-next");
 
   public void launchApplication() {
@@ -32,10 +31,6 @@ public class WelcomePage extends BasePage {
 
   public WebElement getLogo() {
     return findElement(logo);
-  }
-
-  public String pageTitleText() {
-    return findElement(pageTitle).getText();
   }
 
   public void clickGetStartedBtn() {
