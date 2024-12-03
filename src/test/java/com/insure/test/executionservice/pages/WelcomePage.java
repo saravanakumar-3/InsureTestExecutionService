@@ -1,5 +1,6 @@
 package com.insure.test.executionservice.pages;
 
+import static com.insure.test.executionservice.pages.CommonPage.logo;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -20,11 +21,7 @@ public class WelcomePage extends BasePage {
   @Value("${automation.url}")
   private String url;
 
-  public static final By logo = new By.ById("header-logo");
-  public static final By pageTitle = new By.ById("page-title");
-  public static final By needHelpBtn = new By.ById("btn-need-help");
   public static final By getStartedBtn = new By.ById("btn-next");
-  public static final By contactEmail = new By.ById("contact-email");
 
   public void launchApplication() {
     driver.get(url);
@@ -34,19 +31,6 @@ public class WelcomePage extends BasePage {
 
   public WebElement getLogo() {
     return findElement(logo);
-  }
-
-  public String pageTitleText() {
-    return findElement(pageTitle).getText();
-  }
-
-  public void clickHelpBtn() {
-    click(needHelpBtn);
-    wait.until(visibilityOfElementLocated(contactEmail));
-  }
-
-  public String getContactEmail() {
-    return findElement(contactEmail).getText();
   }
 
   public void clickGetStartedBtn() {
