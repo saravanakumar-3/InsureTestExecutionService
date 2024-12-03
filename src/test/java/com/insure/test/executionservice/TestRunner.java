@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
     plugin = {"pretty", "json:target/cucumber-reports/Cucumber.json", "me.jvt.cucumber.report.PrettyReports:target"})
 public class TestRunner extends AbstractTestNGCucumberTests {
   @Override
-  @DataProvider(parallel = true)
+  @DataProvider(parallel = false)
   public Object[][] scenarios() {
     return super.scenarios();
   }
